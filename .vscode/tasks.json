@@ -1,0 +1,114 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Copilot Recording - Lab 1",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "start",
+        "--lab",
+        "1"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Copilot Recording - Lab 2",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "start",
+        "--lab",
+        "2"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Copilot Recording - Lab 3",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "start",
+        "--lab",
+        "3"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Copilot Recording - Lab 4",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "start",
+        "--lab",
+        "4"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Copilot Recording - Lab 5",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "start",
+        "--lab",
+        "5"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Finalize Copilot Recording",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        ".github/scripts/copilot_recorder.py",
+        "--action",
+        "finalize",
+        "--session",
+        "${input:sessionId}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sessionId",
+      "type": "promptString",
+      "description": "Enter the session ID from when you started recording"
+    }
+  ]
+}

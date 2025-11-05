@@ -1,0 +1,164 @@
+name: Review Copilot Usage
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'conversations/**'
+      - 'eCommApp/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review-copilot-usage:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Detect Lab Number from PR
+        id: detect-lab
+        run: |
+          # Try to detect lab number from PR title or branch name
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_BRANCH="${{ github.event.pull_request.head.ref }}"
+          
+          # Try to extract lab number from PR title (e.g., "Lab 3: Cart Implementation")
+          if [[ "$PR_TITLE" =~ [Ll]ab[[:space:]]*([0-9]+) ]]; then
+            LAB_NUM="${BASH_REMATCH[1]}"
+          # Try to extract from branch name (e.g., "feature/lab-3" or "lab3")
+          elif [[ "$PR_BRANCH" =~ [Ll]ab[-_]?([0-9]+) ]]; then
+            LAB_NUM="${BASH_REMATCH[1]}"
+          else
+            LAB_NUM="1"  # Default to lab 1
+          fi
+          
+          echo "lab_number=$LAB_NUM" >> $GITHUB_OUTPUT
+          echo "Detected Lab Number: $LAB_NUM"
+          
+          # Determine expected branch based on lab number
+          EXPECTED_BRANCH="solution/lab-${LAB_NUM}"
+          echo "expected_branch=$EXPECTED_BRANCH" >> $GITHUB_OUTPUT
+          echo "Expected Branch: $EXPECTED_BRANCH"
+      
+      - name: Check for Conversation Files
+        id: check-conversations
+        run: |
+          LAB_NUM="${{ steps.detect-lab.outputs.lab_number }}"
+          CONV_FILES=$(find conversations -name "*_lab-${LAB_NUM}.md" 2>/dev/null | wc -l)
+          
+          echo "conversation_count=$CONV_FILES" >> $GITHUB_OUTPUT
+          
+          if [ "$CONV_FILES" -eq 0 ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No conversation files found for Lab $LAB_NUM"
+          else
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "✅ Found $CONV_FILES conversation file(s) for Lab $LAB_NUM"
+          fi
+      
+      - name: Fetch Expected Branch
+        if: steps.check-conversations.outputs.found == 'true'
+        run: |
+          EXPECTED_BRANCH="${{ steps.detect-lab.outputs.expected_branch }}"
+          
+          # Fetch the expected solution branch if it exists
+          if git ls-remote --heads origin "$EXPECTED_BRANCH" | grep -q "$EXPECTED_BRANCH"; then
+            git fetch origin "$EXPECTED_BRANCH:refs/remotes/origin/$EXPECTED_BRANCH"
+            echo "✅ Fetched expected branch: $EXPECTED_BRANCH"
+          else
+            echo "⚠️ Expected branch $EXPECTED_BRANCH not found, will skip code comparison"
+          fi
+      
+      - name: Review Copilot Usage
+        if: steps.check-conversations.outputs.found == 'true'
+        id: review
+        run: |
+          python .github/scripts/pr_reviewer.py \
+            --lab ${{ steps.detect-lab.outputs.lab_number }} \
+            --expected-branch ${{ steps.detect-lab.outputs.expected_branch }} \
+            --workspace . \
+            --output review-results.json
+          
+          # Capture the comment (already printed to stdout by the script)
+          # The script also saves to review-results.json
+      
+      - name: Create No Conversation Warning
+        if: steps.check-conversations.outputs.found == 'false'
+        run: |
+          LAB_NUM="${{ steps.detect-lab.outputs.lab_number }}"
+          
+          cat > review-results.json <<EOF
+          {
+            "comment": "## ⚠️ No Copilot Conversation Recording Found\n\n**Lab:** $LAB_NUM\n\nWe couldn't find any Copilot conversation recordings for this lab.\n\n### Why This Matters\n\nRecording your Copilot conversations helps:\n- Track your learning progress\n- Provide personalized feedback on your Copilot usage\n- Identify areas where you can improve your AI-assisted development skills\n\n### How to Record Conversations\n\n1. Use the conversation recorder script:\n   \`\`\`bash\n   python .github/scripts/copilot_recorder.py --action start --lab $LAB_NUM\n   \`\`\`\n\n2. Continue your work with GitHub Copilot\n\n3. The conversation will be automatically recorded in the \`/conversations\` directory\n\n4. Commit the conversation file along with your code changes\n\n### Next Steps\n\n- Review the [Conversation Recording Guide](../conversations/README.md)\n- Start recording your next Copilot session\n- Include the conversation file in your PR\n\n---\n\n*Your code changes will still be reviewed, but we cannot provide feedback on Copilot usage without conversation recordings.*",
+            "grade": "N/A",
+            "score": 0
+          }
+          EOF
+      
+      - name: Post Review Comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const reviewData = JSON.parse(fs.readFileSync('review-results.json', 'utf8'));
+            
+            // Post the review comment
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: reviewData.comment
+            });
+            
+            // Add a label based on grade
+            if (reviewData.grade) {
+              let label = '';
+              switch (reviewData.grade) {
+                case 'A':
+                  label = 'copilot-usage: excellent';
+                  break;
+                case 'B':
+                  label = 'copilot-usage: good';
+                  break;
+                case 'C':
+                  label = 'copilot-usage: satisfactory';
+                  break;
+                case 'D':
+                case 'F':
+                  label = 'copilot-usage: needs-improvement';
+                  break;
+              }
+              
+              if (label) {
+                try {
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.issue.number,
+                    labels: [label]
+                  });
+                } catch (error) {
+                  console.log('Label may not exist yet:', error.message);
+                }
+              }
+            }
+      
+      - name: Upload Review Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: copilot-review-results
+          path: review-results.json
+          retention-days: 90
