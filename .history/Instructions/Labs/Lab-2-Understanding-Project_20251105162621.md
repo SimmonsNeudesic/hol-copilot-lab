@@ -61,7 +61,8 @@ GitHub is now also offering a new auto model selection feature within Visual Stu
 - **Auto Model Selection**: Will automatically choose from a variety of models with different multipliers at a 10% discount
 - **Usage Allowances**: 
     - Copilot Business: 300 requests per user per month
-- **Additional Requests**: Additional requests are not currently available with our Github Copilot licenses. 
+    - Copilot Enterprise: 1,000 requests per user per month
+- **Additional Requests**: Available at $0.04 each when you exceed your monthly allowance
 
 For complete details on model pricing and billing, see: [GitHub Copilot Billing Documentation](https://docs.github.com/copilot/concepts/billing/copilot-requests)
 
