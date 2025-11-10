@@ -1,6 +1,8 @@
-# Exercise 2 - Exploring the Codebase with GitHub Copilot
+# Lab 1 - Understanding Your Project with GitHub Copilot
 
 #### Duration: 30 minutes
+
+> **Note**: This is the first lab in the series. If you need help with environment setup (GitHub account, VS Code, Copilot extension), please refer to the repository README for prerequisites.
 
 ## 🎯 Learning Objectives
 
@@ -297,30 +299,72 @@ Can you identify which files or functions have low or missing test coverage?
 What would be good candidates for adding more tests to improve coverage?
 ```
 
-## 🎁 Optional Task: Building a Better README
+## 📝 Step 6: Building Enhanced README Documentation
 
-Now that you understand the project structure and setup process, let's use GitHub Copilot to improve the project documentation for future developers.
+Now that you understand the project structure and setup process, let's use GitHub Copilot to improve the project documentation for future developers. **This is the expected outcome for Lab 1.**
+
+### Your Mission:
+Create or enhance TWO README files:
+1. **Root README** (`/README.md`) - Already created for you as an overview
+2. **eCommApp README** (`/eCommApp/README.md`) - This needs significant enhancement
 
 ### Instructions:
-1. Use GitHub Copilot to analyze the current README (if it exists) and suggest improvements. See the below sample prompts if you get stuck.
-2. Create or enhance documentation based on your exploration.
+
+#### Part A: Enhance the eCommApp README
+1. Open the file `/eCommApp/README.md` in your editor
+2. Use GitHub Copilot to analyze and enhance the documentation
 
 <details>
-  <summary>Sample Prompts</summary>
+  <summary>Sample Prompts for Enhancement</summary>
 
   ```
-  Does this project have a README? If so, what's missing that would help new developers?
-  ```
-
-  ```
-  Based on our conversation about this project, can you help me create a comprehensive "Quick Start Guide" for new developers? Include setup steps, key commands, and important files to know about.
+  @workspace Analyze the eCommApp README and suggest comprehensive improvements. What's missing that would help new developers?
   ```
 
   ```
-  Can you suggest a better project description and feature list for the README based on the actual codebase?
+  Based on the eCommApp codebase, generate a comprehensive README that includes:
+  - Detailed project description
+  - Complete feature list
+  - Technology stack with explanations
+  - Setup instructions with troubleshooting
+  - Development workflow
+  - Testing strategy
+  - Project structure explanation
+  ```
+
+  ```
+  Add a section explaining the key components and their responsibilities in the eCommApp
   ```
 
 </details>
+
+#### Part B: Add Practical Sections
+Enhance the README with these essential sections:
+
+1. **Features Section**: List what the app actually does
+   ```
+   Can you list all the features this e-commerce application provides based on the codebase?
+   ```
+
+2. **Technology Stack**: Explain the choices
+   ```
+   Create a detailed technology stack section explaining React, TypeScript, Vite, and other dependencies
+   ```
+
+3. **Architecture Overview**: Help developers understand the structure
+   ```
+   Explain the application architecture and key design patterns used
+   ```
+
+4. **Common Tasks**: Add developer-friendly commands
+   ```
+   Create a 'Common Development Tasks' section with examples for adding components, running tests, debugging
+   ```
+
+5. **Troubleshooting**: Help future developers
+   ```
+   Generate a troubleshooting section for common setup and development issues
+   ```
 
 ### 💡 Pro Tips for README Enhancement:
 - Include actual setup commands you've tested
@@ -328,6 +372,7 @@ Now that you understand the project structure and setup process, let's use GitHu
 - Document environment requirements and dependencies
 - Include links to important files and folders
 - Add examples of common development tasks
+- Use screenshots or code examples where helpful
 
 ### 🔄 Iterative Improvement:
 After GitHub Copilot generates documentation, you can refine it:
@@ -337,12 +382,26 @@ Can you make this setup guide more beginner-friendly?
 ```
 
 ```
-Add a troubleshooting section for common setup issues.
+Add code examples for common component patterns used in this app
 ```
 
 ```
-Include examples of how to run different types of tests.
+Expand the testing section with examples of different test types
 ```
+
+### ✅ Validation Checkpoint:
+Your enhanced eCommApp README should include:
+- [ ] Clear project description and purpose
+- [ ] Complete feature list
+- [ ] Detailed technology stack explanation
+- [ ] Step-by-step setup instructions
+- [ ] Architecture and folder structure overview
+- [ ] Development workflow and common tasks
+- [ ] Testing instructions and examples
+- [ ] Troubleshooting guide
+- [ ] Links to important files and documentation
+
+**Pro Tip**: Save your enhanced README! You'll need it as a reference throughout the remaining labs.
 
 ## 💡 Tips and Tricks
 
@@ -437,13 +496,14 @@ Why might my tests be failing intermittently?
 Remember: Every expert was once a beginner. GitHub Copilot Chat gives you a judgment-free space to ask questions, explore concepts, and build your understanding at your own pace!
 
 
-## 🏆 Exercise Wrap-up
+## 🏆 Lab 1 Wrap-up
 
 Congratulations! You've successfully used GitHub Copilot Chat in Ask mode to:
 - ✅ Understand the purpose and functionality of an unfamiliar codebase
 - ✅ Analyze project structure and organization
 - ✅ Identify technologies, frameworks, and dependencies
 - ✅ Learn how to build, run, and test the application
+- ✅ Create comprehensive README documentation for future developers
 
 ### Reflection Questions:
 1. How did using GitHub Copilot Chat change your approach to exploring a new codebase compared to manual exploration?
@@ -451,6 +511,7 @@ Congratulations! You've successfully used GitHub Copilot Chat in Ask mode to:
 3. Were there any areas where GitHub Copilot's explanations needed clarification or weren't accurate?
 4. **Model Comparison**: Which AI models did you try, and what differences did you notice in their responses?
 5. **Model Preferences**: Did you develop preferences for certain models for specific types of questions? Why?
+6. How will enhanced documentation help your team onboard faster?
 
 ### Key Takeaways:
 - GitHub Copilot Chat can dramatically accelerate codebase onboarding
@@ -459,11 +520,21 @@ Congratulations! You've successfully used GitHub Copilot Chat in Ask mode to:
 - Use follow-up questions to deepen understanding of unfamiliar technologies
 - **Different AI models excel at different tasks** - experimenting with multiple models gives you a more complete picture
 - **Model selection strategy** can improve both the quality and speed of your development workflow
+- Good documentation is a gift to your future self and team
+
+### 📋 Lab 1 Deliverables:
+Before moving to Lab 2, ensure you have:
+- [ ] Enhanced eCommApp README.md with comprehensive documentation
+- [ ] Understanding of the project structure and architecture
+- [ ] Ability to build and run the application locally
+- [ ] Knowledge of the testing framework and commands
 
 ## 🚀 Next Steps
 
-In the next exercise, we'll use what we've learned about the codebase to start improving test coverage and implementing new features for The Daily Harvest's e-commerce platform!
+In **Lab 2**, you'll apply your newfound understanding to complete a real feature! You'll work from a GitHub issue (just like in a real development workflow) and use GitHub Copilot to implement the feature with tests.
 
-#### You have successfully completed the lab. Click on **Next >>** to continue to the next lab.
+Ready to build something? Head to [Lab 2: Feature Development with Copilot](Lab-2-Feature-Development.md)
+
+#### You have successfully completed Lab 1. Click on **Next >>** to continue to Lab 2.
 
 ![](../../media/next-page.png)

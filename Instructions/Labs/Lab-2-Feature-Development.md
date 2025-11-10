@@ -1,26 +1,79 @@
-# Exercise 3 - Writing Unit Tests with GitHub Copilot Edit Mode
+# Lab 2 - Feature Development with GitHub Copilot
 
-#### Duration: 30 minutes
+#### Duration: 45 minutes
 
 ## 🎯 Learning Objectives
 
 By the end of this exercise, you will:
-- Understand how to use GitHub Copilot's Autocomplete feature and Edit mode for code modifications
+- Work from a GitHub issue like a real development workflow
+- Use GitHub Copilot's Autocomplete, Chat, and Edit modes together
+- Implement a complete feature from requirement to tests
 - Learn to write comprehensive unit tests with AI assistance
-- Improve existing code coverage using intelligent test generation
-- Understand best practices for AI-assisted testing
+- Understand the full development cycle with AI assistance
 
-## 🍎 Scenario: Improving The Daily Harvest's Test Coverage
+## 🍎 Scenario: Completing Your First Feature at The Daily Harvest
 
-Your manager at The Daily Harvest has noticed that some critical e-commerce functions lack proper test coverage. During yesterday's code review, the team identified several functions in the shopping cart module that need comprehensive unit tests before the next release.
+Great news! Your manager at The Daily Harvest is impressed with your understanding of the codebase (from Lab 1). Now it's time to contribute real value. 
 
-Your task today is to use GitHub Copilot to write high-quality unit tests that will:
-- Verify happy path scenarios such as the cart having items
-- Test edge cases like the cart being empty
-- Improve overall code quality and reliability
+**You've been assigned your first GitHub issue!** 
+
+Just like in real-world development, you'll:
+1. Read and understand the issue requirements
+2. Use GitHub Copilot to implement the feature
+3. Write comprehensive tests to ensure quality
+4. Validate your implementation works as expected
+
+This lab simulates a real development workflow where issues are assigned, features are built with AI assistance, and quality is maintained through testing.
 
 
-## 📊 Step 1: Baseline Testing and Coverage Analysis
+## 📋 Step 1: Understanding Your Assignment
+
+In real development workflows, features start with requirements—often documented as GitHub issues. For this lab, you'll work on improving test coverage for The Daily Harvest's cart functionality.
+
+### Your GitHub Issue:
+
+**Title**: Improve Cart Component Test Coverage
+
+**Description**:
+```
+As part of our quality initiative, we need to improve test coverage for the CartPage component.
+
+Currently, we have minimal test coverage. We need comprehensive tests that cover:
+
+Acceptance Criteria:
+- [ ] Test that cart displays items correctly when populated
+- [ ] Test that empty cart shows appropriate message
+- [ ] Test that checkout button is displayed when cart has items
+- [ ] Test that checkout modal opens and closes correctly
+- [ ] Test that checkout can be canceled
+- [ ] Achieve >80% coverage for CartPage component
+- [ ] All tests pass successfully
+- [ ] Tests follow existing project patterns
+
+Technical Notes:
+- CartPage component is located in src/components/CartPage.tsx
+- Existing test file is src/components/CartPage.test.tsx
+- We use Vitest and React Testing Library
+- Follow existing test patterns in the codebase
+
+Definition of Done:
+- All acceptance criteria met
+- Tests are clear and maintainable
+- Coverage report shows improvement
+- No breaking changes to existing tests
+```
+
+### Instructions:
+1. **Read the issue carefully** - Understanding requirements is crucial
+2. **Ask GitHub Copilot** for clarification if needed:
+   ```
+   @workspace Explain the CartPage component and what I need to test based on this issue
+   ```
+3. **Plan your approach** before coding - Good developers think before they code!
+
+💡 **Pro Tip**: In a real project, you would comment on the GitHub issue with questions or your implementation plan. This helps with team communication!
+
+## 📊 Step 2: Baseline Testing and Coverage Analysis
 
 Before we start writing new tests, let's establish a baseline by running the existing test suite and checking our current code coverage. We can use what we learned in Exercise 2 about how to run tests in this project.
 
@@ -53,7 +106,7 @@ This baseline will help you understand exactly which test cases you need to add 
 **Pro Tip:** Keep the coverage report open in a separate terminal tab so you can re-run it after adding new tests to see your progress!
 
 
-## ✏️ Step 2: Using Autocomplete to Generate One Additional Unit Test
+## ✏️ Step 3: Using Autocomplete to Generate One Additional Unit Test
 
 To start off, you'd like to generate one additional unit test. We can use GitHub Copilot's Autocomplete feature to make an addition to the unit test suite.
 
@@ -80,7 +133,7 @@ To start off, you'd like to generate one additional unit test. We can use GitHub
 
 5. Once the test is generated, try running it to make sure that it and the existing test pass. If there are any failures, try asking GitHub Copilot how to fix them.
 
-## 💭 Step 3: Using Edit Mode to Generate Additional Unit Tests
+## 💭 Step 4: Using Edit Mode to Generate Additional Unit Tests
 
 There are many other tests that we can write for `CartPage`. While we could continue using Autocomplete to generate them, that would be very slow and cumbersome. We'll instead use GitHub Copilot's Edit mode to create comprehensive unit tests.
 
@@ -145,7 +198,7 @@ However, for generating comprehensive unit tests, you should **explicitly provid
 
 **Pro Tip:** The more specific and contextual your Edit mode prompts are, the better the generated code will be. Always review and iterate on AI-generated tests to ensure they meet your quality standards!
 
-## 🎓 Step 4: Best Practices and Code Review
+## 🎓 Step 5: Best Practices and Code Review
 
 Now that you've generated comprehensive unit tests, it's important to ensure they follow industry best practices and maintain high quality. This step focuses on using GitHub Copilot to review and refine your testing approach.
 
@@ -175,29 +228,84 @@ Ask GitHub Copilot to review your unit tests and make suggestions for improvemen
 - Maintainable test structure
 ```
 
-## 🏆 Exercise Wrap-up
+## ✅ Step 6: Validating Issue Completion
 
-Great work! You've successfully used GitHub Copilot's Edit mode to:
-- ✅ Generate comprehensive unit tests for critical business logic
-- ✅ Cover edge cases and error conditions
-- ✅ Improve code coverage and quality
-- ✅ Follow testing best practices
+Now that you've completed the work, let's verify all acceptance criteria are met—just like you would before closing a real GitHub issue.
+
+### Validation Checklist:
+Run through each acceptance criterion from the original issue:
+
+- [ ] **Test that cart displays items correctly when populated** - Check your test file
+- [ ] **Test that empty cart shows appropriate message** - Verify this test exists
+- [ ] **Test that checkout button is displayed** - Confirm coverage
+- [ ] **Test that checkout modal opens and closes** - Validate implementation
+- [ ] **Test that checkout can be canceled** - Review test
+- [ ] **Achieve >80% coverage for CartPage** - Run coverage report:
+  ```bash
+  npm run test:coverage
+  ```
+- [ ] **All tests pass successfully** - Run tests:
+  ```bash
+  npm test
+  ```
+- [ ] **Tests follow existing patterns** - Review for consistency
+
+### 🎯 If All Criteria Are Met:
+Congratulations! In a real workflow, you would:
+1. Comment on the GitHub issue with your results
+2. Create a Pull Request linking to the issue
+3. Request code review from your team
+4. Merge once approved
+
+### 🔧 If Some Criteria Aren't Met:
+- Identify gaps using the checklist
+- Use GitHub Copilot to address missing items
+- Re-run tests and coverage
+- Iterate until complete
+
+**Pro Tip**: Professional developers don't guess—they validate! Always check your work against requirements before considering a task complete.
+
+## 🏆 Lab 2 Wrap-up
+
+Excellent work! You've successfully completed your first feature using a real development workflow:
+- ✅ Read and understood a GitHub issue
+- ✅ Used multiple GitHub Copilot modes (Autocomplete, Chat, Edit)
+- ✅ Generated comprehensive unit tests for critical business logic
+- ✅ Covered edge cases and error conditions
+- ✅ Validated your work against acceptance criteria
+- ✅ Improved code coverage and quality
+- ✅ Followed testing best practices
 
 ### Reflection Questions:
-1. **How did Edit mode compare to Autocomplete?**
-2. **What types of test scenarios did GitHub Copilot excel at generating?**
-3. **Where did you need to provide additional guidance or corrections?**
-4. **How might you use Edit mode differently in future testing tasks?**
+1. **How did starting with a GitHub issue change your development approach?**
+2. **How did Edit mode compare to Autocomplete?**
+3. **What types of test scenarios did GitHub Copilot excel at generating?**
+4. **Where did you need to provide additional guidance or corrections?**
+5. **How would you explain your changes to a team member in a PR review?**
+6. **What would you do differently next time?**
 
 ### Key Takeaways:
-- GitHub Copilot's Edit mode is a powerful tool for generating and refining unit tests
-- Always review AI-generated code to ensure quality and correctness
-- Use specific prompts to guide AI towards your desired outcomes
+- Real development starts with clear requirements (issues, tickets, specs)
+- GitHub Copilot adapts to different modes for different tasks
+- Autocomplete is great for line-by-line completion
+- Edit mode excels at targeted, multi-line changes
+- Always validate your work against acceptance criteria
+- AI assistance doesn't replace critical thinking—it amplifies it
+- Good tests are an investment in code quality and maintainability
+
+### 📋 Lab 2 Deliverables:
+You should now have:
+- [ ] Enhanced CartPage.test.tsx with comprehensive tests
+- [ ] >80% code coverage for CartPage component
+- [ ] All tests passing
+- [ ] Understanding of test-driven development with AI
 
 ## 🚀 Next Steps
 
-In Exercise 4, we'll explore GitHub Copilot's **Agent mode** to tackle more complex, multi-file tasks like implementing the complete shopping cart feature with database integration, API endpoints, and frontend components.
+In **Lab 3**, we'll level up to **Agent mode**! Instead of implementing line-by-line, you'll delegate entire goals to GitHub Copilot and watch it work autonomously across multiple files. Think of it as having an AI developer on your team!
 
-#### You have successfully completed the lab. Click on **Next >>** to continue to the next lab.
+Ready for autonomous AI development? Head to [Lab 3: Achieving Goals with Agent Mode](Lab-3-Agent-Mode.md)
+
+#### You have successfully completed Lab 2. Click on **Next >>** to continue to Lab 3.
 
 ![](../../media/next-page.png)

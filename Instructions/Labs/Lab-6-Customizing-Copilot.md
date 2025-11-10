@@ -1,6 +1,8 @@
-# Exercise 7 - Customizing GitHub Copilot
+# Lab 6 - Customizing GitHub Copilot for Your Workflow
 
 #### Duration: 30 minutes
+
+> **Final Lab!** This is where you'll learn to make GitHub Copilot truly yours by teaching it your team's standards and preferences.
 
 ## 🎯 Learning Objectives
 
@@ -254,21 +256,100 @@ __Instructions:__
 9. In the drop-down list provided, choose "Plan"
 10. Now, write a prompt to GitHub Copilot using this new mode about a new feature you would like to implement, and see how your answer reflects the goals provided by the chat mode file you created
 
-## 🏆 Exercise Wrap-up
+## 🏆 Lab 6 Wrap-up
 
-In this exercise, we explored how to customize GitHub Copilot's behavior using chat modes and custom instructions files. By creating a specific chat mode for planning, we were able to guide Copilot's responses to better align with our needs for implementing new features or refactoring existing code.
+Congratulations! In this final lab, you've learned to customize GitHub Copilot to match your team's standards and workflow. By creating custom instructions, prompt files, and chat modes, you've transformed Copilot from a general AI assistant into a personalized team member who understands your specific needs.
+
+### What You Accomplished:
+- ✅ Created custom instructions files
+- ✅ Built reusable prompt files
+- ✅ Designed custom chat modes
+- ✅ Reduced repetitive prompting
+- ✅ Enforced organizational standards
 
 ### Reflection Questions
 
-- A more limited feature utilizing custom instructions is the [path-specific custom instructions file](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions#creating-path-specific-custom-instructions-1). How might these be beneficial over more general repository instruction sets?
-- What are some prompts you might be using in your daily workflow that can be consolidated into an instructions file?
+- How will custom instructions reduce friction in your daily development?
+- What team standards would you encode in custom instructions?
+- Which reusable prompts would benefit your team most?
+- How might [path-specific custom instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions#creating-path-specific-custom-instructions-1) help with different parts of your codebase?
+- What custom chat modes would improve your workflow?
 
 ### Key Takeaways
 
-- Custom instructions files can be used to limit repetition in your prompts
-- Custom instructions can both reinforce context and define response formats
-- These files can be stored at different levels to enforce rules wih different scopes
+- **Custom instructions reduce repetition** - Set standards once, apply them always
+- **Instructions cascade** - Personal > Repository > Organization
+- **Prompt files enable reusability** - Standardize common tasks
+- **Chat modes define behavior** - Tailor Copilot's approach to specific goals
+- **Customization scales teams** - Everyone benefits from shared standards
 
-## 🎉 Conclusion
+### 📋 Lab 6 Deliverables:
+You should now have:
+- [ ] Custom instructions file for the repository
+- [ ] At least one reusable prompt file
+- [ ] At least one custom chat mode
+- [ ] Understanding of customization hierarchy
+- [ ] Ideas for team-wide customizations
 
-Congratulations! You have now completed all seven exercises in the GitHub Copilot Labs series. You should now have a solid understanding of how to leverage GitHub Copilot's various modes, tools, and customization options to enhance your development workflow. Keep experimenting with these features to discover new ways they can assist you in your coding journey!
+## 🎉 Series Conclusion - You Did It!
+
+### 🌟 Congratulations! You've Completed the GitHub Copilot Hands-On Lab Series!
+
+You started knowing little about AI-assisted development. Now you're a GitHub Copilot power user! Let's recap your journey:
+
+### Your Learning Journey:
+1. **Lab 1**: Explored codebases with AI assistance - You learned to understand projects 10x faster
+2. **Lab 2**: Completed features from GitHub issues - You experienced real development workflows
+3. **Lab 3**: Delegated goals to Agent mode - You watched AI work autonomously across files
+4. **Lab 4**: Assigned work to Coding Agent - You treated AI as a team member
+5. **Lab 5**: Extended with MCP servers - You connected external knowledge to Copilot
+6. **Lab 6**: Customized for your needs - You made Copilot truly yours
+
+### What You Can Do Now:
+- ✅ Rapidly onboard to new codebases using Copilot Chat
+- ✅ Use Autocomplete, Edit, and Agent modes effectively
+- ✅ Delegate complex tasks to autonomous AI agents
+- ✅ Assign GitHub issues to Copilot Coding Agent
+- ✅ Extend Copilot with external services via MCP
+- ✅ Customize Copilot to match team standards
+- ✅ Review and validate AI-generated code
+- ✅ Apply AI throughout the entire development lifecycle
+
+### The Real Value:
+GitHub Copilot isn't about replacing developers—it's about **multiplying your impact**. You're still the architect, the decision-maker, the creative force. Copilot is your intelligent assistant that:
+- Handles repetitive tasks so you can focus on solving hard problems
+- Suggests solutions you might not have considered
+- Works alongside you at the speed of thought
+- Learns your patterns and adapts to your needs
+
+### Next Steps:
+1. **Apply these skills to real projects** - Start using Copilot in your daily work
+2. **Share with your team** - Help others level up their AI skills
+3. **Keep learning** - GitHub Copilot evolves constantly; stay curious
+4. **Experiment** - Try new prompts, modes, and workflows
+5. **Provide feedback** - Help shape the future of AI-assisted development
+
+### Additional Resources:
+- [GitHub Copilot Documentation](https://docs.github.com/copilot)
+- [GitHub Copilot Blog](https://github.blog/tag/github-copilot/)
+- [VS Code Copilot Docs](https://code.visualstudio.com/docs/copilot)
+- [MCP Server Registry](https://github.com/mcp)
+- [GitHub Community](https://github.com/community)
+
+### Thank You! 🙏
+
+Thank you for investing your time in learning GitHub Copilot. You're now equipped to work faster, smarter, and more creatively. The future of software development is here, and you're ready for it.
+
+**Now go build something amazing!** 🚀
+
+---
+
+### Share Your Success! 🎊
+
+Completed the labs? Share your achievement:
+- Tell your team what you learned
+- Try these techniques on real projects
+- Experiment with customizations
+- Help others learn GitHub Copilot
+
+**Welcome to the future of AI-assisted development!**

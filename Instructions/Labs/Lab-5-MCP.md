@@ -1,4 +1,4 @@
-# Exercise 6 - Extending GitHub Copilot with MCP
+# Lab 5 - Extending GitHub Copilot with Model Context Protocol (MCP)
 
 #### Duration: 30 minutes
 
@@ -157,9 +157,9 @@ If you would like to see what your other options are, take a moment to peruse th
 2. Instead of installing them, click on an interesting server instance. Check out the documentation. Are there any interesting features of that particular MCP Server that could be useful in your day-to-day workflows?
 
 
-## 🏆 Exercise Wrap-up
+## 🏆 Lab 5 Wrap-up
 
-Congratulations! You've successfully extended GitHub Copilot's capabilities using Model Context Protocol (MCP) servers. You've experienced how MCP bridges the gap between your IDE and external services, bringing real-time data and functionality directly into your development workflow without context switching.
+Congratulations! You've successfully extended GitHub Copilot's capabilities using Model Context Protocol (MCP) servers. You've bridged the gap between your IDE and external services, eliminating context switching and bringing the world to your fingertips!
 
 ### Reflection Questions:
 
@@ -192,10 +192,20 @@ Congratulations! You've successfully extended GitHub Copilot's capabilities usin
 - **Scalable integration**: Start with essential services and expand based on team needs and workflow requirements
 
 
+### 📋 Lab 5 Deliverables:
+You should now have:
+- [ ] GitHub MCP server installed and configured
+- [ ] Microsoft Learn MCP server installed
+- [ ] Experience using MCP tools from Copilot
+- [ ] Understanding of MCP benefits for workflow
+- [ ] Ideas for additional MCP servers to explore
+
 ## 🔮 What's Next?
 
-In Exercise 7, we'll take the extendability we received by using MCPs and expand that customizability further through the use of __Custom Instructions files__ to ensure GitHub Copilot has both a thorough understanding of our work's context _and_ the format in which we want our responses.
+In **Lab 6** (the final lab!), we'll complete your Copilot mastery by learning **Custom Instructions** and configurations. You'll teach Copilot about your team's specific standards, create reusable prompts, and build custom chat modes. It's time to make Copilot truly yours!
 
-#### You have successfully completed the lab. Click on **Next >>** to continue to the next lab.
+Ready to customize your AI assistant? Head to [Lab 6: Customizing Copilot Behavior](Lab-6-Customizing-Copilot.md)
+
+#### You have successfully completed Lab 5. Click on **Next >>** to continue to Lab 6.
 
 ![](../../media/next-page.png)
