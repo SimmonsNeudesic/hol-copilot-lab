@@ -1,4 +1,4 @@
-# Exercise 5 - Agentic Coding
+# Lab 4 - Autonomous Coding with GitHub Copilot Coding Agent
 
 #### Duration: 45 minutes
 
@@ -214,9 +214,9 @@ Copilot Autofix isn't just for fixing individual vulnerabilities - it can help y
 
 
 
-## 🏆 Exercise Wrap-up
+## 🏆 Lab 4 Wrap-up
 
-Congratulations! You've successfully used GitHub Copilot Coding Agent to autonomously implement new functionality in a codebase. You've experienced the full workflow from issue creation to code review, gaining insight into how AI can augment your development process.
+Congratulations! You've successfully used GitHub Copilot Coding Agent to autonomously implement new functionality while you could focus on other tasks. You've experienced the full workflow from issue assignment to code review—treating AI as a real team member!
 
 ### Reflection Questions:
 1. What types of tasks will you delegate to Coding Agent in your projects?
@@ -248,10 +248,20 @@ Congratulations! You've successfully used GitHub Copilot Coding Agent to autonom
 - **Combine human and AI review**: Use both Copilot's automated review capabilities and human oversight for comprehensive code quality
 - **Monitor and guide**: While Copilot works autonomously, periodic check-ins help ensure alignment with your goals
 
+### 📋 Lab 4 Deliverables:
+You should now have:
+- [ ] Experience assigning issues to Copilot
+- [ ] Pull requests created by Coding Agent
+- [ ] Understanding of autonomous AI development
+- [ ] Experience reviewing AI-generated code
+- [ ] Knowledge of security scanning with Copilot Autofix
+
 ## 🔮 Coming Up Next:
 
-In Exercise 6, we'll take a look at bringing additional context to GitHub Copilot through the use of **MCP Servers** to provide new functionality and information to smooth out your workflows.
+In **Lab 5**, we'll expand GitHub Copilot's knowledge! You'll learn about **Model Context Protocol (MCP) servers** that connect external services and documentation directly to Copilot. Imagine having your project management tools, documentation, and more accessible without leaving your IDE!
 
-#### You have successfully completed the lab. Click on **Next >>** to continue to the next lab.
+Ready to supercharge Copilot with external knowledge? Head to [Lab 5: Extending Capabilities with MCP](Lab-5-MCP.md)
+
+#### You have successfully completed Lab 4. Click on **Next >>** to continue to Lab 5.
 
 ![](../../media/next-page.png)
